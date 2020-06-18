@@ -23,7 +23,7 @@ public class ClickOn implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         WebElementFacade elementFacade = element.resolveFor(actor);
-        if (elementFacade != null || elementFacade.isVisible()) {
+        if (elementFacade != null || elementFacade.isCurrentlyVisible()) {
             actor.attemptsTo(
                     Click.on(element)
             );
